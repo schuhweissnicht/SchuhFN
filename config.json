@@ -1,0 +1,20 @@
+{
+    "email": "BotEmail",
+    "password": "BotPassword",
+    "cid": "cid_017_athena_commando_m",
+    "avatar": "cid_601_athena_commando_f_palespooky",
+    "bid": "bid_138_celestial",
+    "pid": "Pickaxe_Lockjaw",
+    "banner": "otherbanner28",
+    "banner_color": "defaultcolor31",
+    "level": "4060",
+    "bp_tier": "100",
+    "prefix": "!",
+    "status": "discord.gg/6wCwxjd",
+    "platform": "WIN",
+    "playlist": "Playlist_dadbro_squads",
+    "friendaccept": "true",
+    "joinoninvite": "false",
+    "AdminPassword": "9999",
+    "JoinMessage": "Hello World!"
+}
