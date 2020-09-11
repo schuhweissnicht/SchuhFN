@@ -123,6 +123,7 @@ client = commands.Bot(
     status=data['status'],
     platform=fortnitepy.Platform(data['platform']),
 )
+client.party_build_id = '1:2:'
 
 
 @client.event
