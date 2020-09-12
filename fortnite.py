@@ -123,7 +123,6 @@ client = commands.Bot(
     status=data['status'],
     platform=fortnitepy.Platform(data['platform']),
 )
-client.party_build_id = '1:2:'
 
 
 @client.event
@@ -794,6 +793,8 @@ async def reset(ctx):
 
 @client.command()
 async def olddefaults(ctx):
+    previous_skin = client.party.me.outfit
+    
         await ctx.send(f'Show old defaults..')
         await client.party.me.set_outfit(asset='cid_001_athena_commando_f_default')
         await asyncio.sleep(1.25)
@@ -1848,3 +1849,4 @@ if (data['email'] and data['password']) and (data['email'] != "" and data['passw
         exit()
 else:
     print(Fore.RED + ' • [ERROR] ' + Fore.RESET + 'Can not log in, as no accounts credentials were provided.')
+    
