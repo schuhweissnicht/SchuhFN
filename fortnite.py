@@ -24,7 +24,7 @@ except ModuleNotFoundError as e:
 
 os.system('cls||clear')
 
-intro = Fore.LIGHTCYAN_EX + """ • BetterFN is made by Schuh weiß nicht
+intro = Fore.LIGHTCYAN_EX + """ • SchuhFN is made by Schuh weiß nicht
  • For support, questions, etc join https://discord.gg/6wCwxjd
  • Don't forget to follow me on Instagram and Twitter (@kilianbtw)
  """
