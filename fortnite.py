@@ -25,7 +25,7 @@ except ModuleNotFoundError as e:
 os.system('cls||clear')
 
 intro = Fore.LIGHTCYAN_EX + """ • SchuhFN is made by Schuh weiß nicht
- • For support, questions, etc join https://discord.gg/6wCwxjd
+ • For support, questions, etc join https://discord.gg/AtJ2xgzjQY
  • Don't forget to follow me on Instagram and Twitter (@kilianbtw)
  """
 
@@ -88,7 +88,7 @@ with open('config.json') as f:
     try:
         data = json.load(f)
     except json.decoder.JSONDecodeError as e:
-        print(Fore.RED + ' [ERROR] ' + Fore.RESET + "There was an error in one of the bot's files! (config.json). If you have problems trying to fix it, join the discord support server for help - https://discord.gg/6wCwxjd")
+        print(Fore.RED + ' [ERROR] ' + Fore.RESET + "There was an error in one of the bot's files! (config.json). If you have problems trying to fix it, join the discord support server for help - https://discord.gg/AtJ2xgzjQY")
         print(Fore.LIGHTRED_EX + f'\n {e}')
         exit(1)
 
@@ -96,7 +96,7 @@ with open('info.json') as f:
     try:
         info = json.load(f)
     except json.decoder.JSONDecodeError as e:
-        print(Fore.RED + ' [ERROR] ' + Fore.RESET + "There was an error in one of the bot's files! (info.json) If you have problems trying to fix it, join the discord support server for help - https://discord.gg/6wCwxjd")
+        print(Fore.RED + ' [ERROR] ' + Fore.RESET + "There was an error in one of the bot's files! (info.json) If you have problems trying to fix it, join the discord support server for help - https://discord.gg/AtJ2xgzjQY")
         print(Fore.LIGHTRED_EX + f'\n {e}')
         exit(1)
 
