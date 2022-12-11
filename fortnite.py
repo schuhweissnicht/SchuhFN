@@ -1419,9 +1419,52 @@ async def friends(ctx: fortnitepy.ext.commands.Context) -> None:
             else:
                 offlineFriends.append(friend.display_name)
 
-        await ctx.send(f"Bot has {lenFriends()} Friends! {len(onlineFriends)} are Online and {len(offlineFriends)} are Offline!")
+        await ctx.send(f"Bot has {lenFriends()} Friends and {len(onlineFriends)} are Online!")
+
+        if ctx.author.id in info['FullAccess']:
+            print(Fore.LIGHTCYAN_EX + ' • ' + Fore.RESET + "Friends List: " + Fore.GREEN + f'{len(onlineFriends)} Online ' + Fore.RESET + "/" + Fore.LIGHTBLACK_EX + f' {len(offlineFriends)} Offline ' + Fore.RESET + "/" + Fore.LIGHTWHITE_EX + f' {len(onlineFriends) + len(offlineFriends)} Total')
+
+            for x in onlineFriends:
+                if x is not None:
+                    print(Fore.GREEN + " • " + x)
+            for x in offlineFriends:
+                if x is not None:
+                    print(Fore.LIGHTBLACK_EX + " • " + x)
     except Exception:
-        await ctx.send(f'404 there was an error!')
+        pass
+
+    else:
+        pass
+
+
+
+@is_admin()
+@client.command(aliases=['cc'],)
+async def crown(ctx: fortnitepy.ext.commands.Context, amount = None):
+    meta = client.party.me.meta
+    data = (meta.get_prop('Default:AthenaCosmeticLoadout_j'))['AthenaCosmeticLoadout']
+
+    if amount is not None:
+        try:
+            data['cosmeticStats'][1]['statValue'] = int(amount)
+        except KeyError:
+            data['cosmeticStats'] = [{"statName": "TotalVictoryCrowns", "statValue": int(amount)},
+                                     {"statName": "TotalRoyalRoyales", "statValue": int(amount)},
+                                     {"statName": "HasCrown", "statValue": 0}]
+
+        final = {'AthenaCosmeticLoadout': data}
+        key = 'Default:AthenaCosmeticLoadout_j'
+        prop = {key: meta.set_prop(key, final)}
+
+        await client.party.me.patch(updated=prop)
+
+        await asyncio.sleep(0.2)
+        await ctx.send(f'Set {int(amount)} Crown')
+        await client.party.me.clear_emote()
+        await client.party.me.set_emote('EID_Coronet')
+
+    else:
+        await ctx.send(f"No amount was given. try: {prefix}crown (crown amount)")
 
 
 
