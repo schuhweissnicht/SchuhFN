@@ -173,7 +173,7 @@ async def event_party_invite(invite):
     if data['joinoninvite'].lower() == 'true':
         try:
             await invite.accept()
-            print(Fore.LIGHTCYAN_EX + ' • ' + Fore.RESET + 'Accepted party invite from' + Fore.LIGHTCYAN_EX + f'{invite.sender.display_name}')
+            print(Fore.LIGHTCYAN_EX + ' • ' + Fore.RESET + 'Accepted party invite from ' + Fore.LIGHTCYAN_EX + f'{invite.sender.display_name}')
         except Exception:
             pass
     elif data['joinoninvite'].lower() == 'false':
