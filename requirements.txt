@@ -1,4 +1,6 @@
 fortnitepy
+FortniteAPIAsync
 aiohttp
+aioconsole
 colorama
 requests
